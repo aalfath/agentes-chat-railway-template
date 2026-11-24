@@ -27,6 +27,8 @@ Version: agentes.chat **v0.1.10**.
 | `PORT` | `3000` | The port the app listens on. |
 | `TELEMETRY` | `off` | Anonymous usage statistics to agentes.chat; `on` to share them. |
 
+The start script also sets `DATABASE_POOL_MAX=10` (upstream's default is 20) unless you set it: each pooled connection costs Postgres 10–20 MB, and 20 pushed Postgres close to the Free plan's 0.5 GB.
+
 The deploy asks for nothing. AI provider keys are added after deploy, per workspace, in **Settings → AI and usage**.
 
 ## After deploy

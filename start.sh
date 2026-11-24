@@ -24,6 +24,10 @@ if [ -n "${OWNER_CLAIM_TOKEN:-}" ] && [ -z "${OWNER_CLAIM_SHA256:-}" ]; then
 fi
 unset OWNER_CLAIM_TOKEN OWNER_LINK
 
+# Each pooled connection costs Postgres 10-20 MB; upstream's 20 pushed Railway Postgres near the Free
+# plan's 0.5 GB. 10 is plenty for a small team; raise it (and Postgres's memory) for a busy one.
+export DATABASE_POOL_MAX="${DATABASE_POOL_MAX:-10}"
+
 # On a first deploy Postgres can still be starting (or its private DNS name not resolving yet). The app
 # exits at once without it, and quick restarts can use up Railway's restart retries, so wait for the
 # database port first (up to DB_WAIT_SECONDS, 180 by default), then let the app run its migrations.
