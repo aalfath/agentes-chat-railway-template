@@ -40,7 +40,7 @@ The deploy asks for nothing. AI provider keys are added after deploy, per worksp
 
 ## Resources
 
-Measured on Railway with each service limited to 0.5 GB RAM and 1 vCPU: the app uses about 270 MB at rest and Postgres about 200 MB, so it fits the Free and Trial plans. A busy team with many agents running at once should give the app 1 GB or more.
+Measured on Railway with each service limited to 0.5 GB RAM and 1 vCPU: the app used about 290 MB and Postgres about 290 MB (peak 380 MB) while an agent answered a burst of messages, with no out-of-memory kills, so it fits the Free and Trial plans. A busy team with many agents running at once should give the app 1 GB or more.
 
 ## Left out on purpose
 

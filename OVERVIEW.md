@@ -40,7 +40,7 @@ After deploy:
 
 Good to know:
 
-* It runs on Railway's smallest plans: about 270 MB for the app and 200 MB for Postgres at rest (each service has 0.5 GB on the Free plan). Give the app 1 GB or more for a busy team.
+* It runs on Railway's smallest plans: about 290 MB each for the app and Postgres in light use (each service has 0.5 GB on the Free plan). Give the app 1 GB or more for a busy team.
 * Agents' own computers and browsers need a machine running the agentes runner (Settings → Devices). The template doesn't run one: Railway has no Docker-in-Docker or desktop session for it. Chat, agents, routines, memory, approvals and MCP work without it.
 * Optional features (email via `SMTP_URL`, Google or GitHub sign-in, voice messages, S3 file storage, vector search) are environment variables listed in the upstream `.env.example`.
 * Anonymous usage statistics are off (`TELEMETRY=off`); set `TELEMETRY=on` to share them with agentes.chat.
